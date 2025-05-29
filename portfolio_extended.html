@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="DK Cartwright LLC Extended Portfolio - Complete project showcase" />
+        <title>Extended Portfolio | DK Cartwright LLC</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="images/dk-cartwright-logo.png" alt="DK Cartwright LLC" />
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Complete Project Portfolio</h1>
+                    <p>All 14 projects showcasing our diverse web development expertise</p>
+                </div>
+            </section>
+
+            <section id="all-projects">
+                <div class="container">
+                    <h2 class="section-title">All Projects</h2>
+
+                    <!-- Search and Filter Controls -->
+                    <div class="portfolio-controls">
+                        <div class="search-container">
+                            <input
+                                type="text"
+                                id="project-search"
+                                placeholder="Search projects..."
+                                class="search-input"
+                            />
+                        </div>
+                        <div class="filter-container">
+                            <div class="filter-label">Filter by Platform:</div>
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" data-platform="all">All</button>
+                                <button class="filter-btn" data-platform="Laravel">Laravel</button>
+                                <button class="filter-btn" data-platform="dotCMS">dotCMS</button>
+                                <button class="filter-btn" data-platform="Wix">Wix</button>
+                                <button class="filter-btn" data-platform="WordPress">WordPress</button>
+                                <button class="filter-btn" data-platform="Custom">Custom</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-grid" id="portfolio-grid">
+                        <!-- What'sUp 24/7 -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Laravel"
+                            data-title="What'sUp 24/7"
+                            data-description="Laravel web application with Vue.js, TypeScript, and MySQL."
+                        >
+                            <img src="images/whatsup247.png" alt="What'sUp 24/7 Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>What'sUp 24/7</h3>
+                                <p>Laravel web application with Vue.js, TypeScript, and MySQL.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Laravel | <strong>Year:</strong> 2023
+                                </div>
+                                <a href="https://www.whatsup247.com/" target="_blank" class="btn mt-2">View Project</a>
+                            </div>
+                        </div>
+
+                        <!-- Payroc -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="dotCMS"
+                            data-title="Payroc"
+                            data-description="Enterprise dotCMS website with Velocity templates."
+                        >
+                            <img src="images/payroc.png" alt="Payroc Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Payroc</h3>
+                                <p>Enterprise dotCMS website with Velocity templates.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> dotCMS | <strong>Year:</strong> 2023
+                                </div>
+                                <a href="https://payroc.com/" target="_blank" class="btn mt-2">View Project</a>
+                            </div>
+                        </div>
+
+                        <!-- Hamilton, IN -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="Hamilton, Indiana"
+                            data-description="Municipal website for the Town of Hamilton, Indiana."
+                        >
+                            <img src="images/hamilton-in.jpg" alt="Hamilton, Indiana Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Hamilton, Indiana</h3>
+                                <p>Municipal website for the Town of Hamilton, Indiana.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2022
+                                </div>
+                                <a href="https://www.hamiltonindiana.org/" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Mrs. Kate Carpenter -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="Mrs. Kate Carpenter"
+                            data-description="Professional business website showcasing services."
+                        >
+                            <img src="images/mrs-kate.png" alt="Mrs. Kate Carpenter Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Mrs. Kate Carpenter</h3>
+                                <p>Professional business website showcasing services.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2022
+                                </div>
+                                <a href="https://www.mrskate.com/" target="_blank" class="btn mt-2">View Project</a>
+                            </div>
+                        </div>
+
+                        <!-- Steuben County Lakes Council -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="Steuben County Lakes Council"
+                            data-description="Environmental organization website for lake conservation."
+                        >
+                            <img src="images/lakes-council.jpg" alt="Lakes Council Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Steuben County Lakes Council</h3>
+                                <p>Environmental organization website for lake conservation.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2022
+                                </div>
+                                <a href="https://www.lakescouncil.org/" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Crooked Lake Association -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="Crooked Lake Association"
+                            data-description="Community association website for lake residents."
+                        >
+                            <img src="images/crooked-lake.jpg" alt="Crooked Lake Association Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Crooked Lake Association</h3>
+                                <p>Community association website for lake residents.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2022
+                                </div>
+                                <a href="https://www.crookedlake.org/" target="_blank" class="btn mt-2">View Project</a>
+                            </div>
+                        </div>
+
+                        <!-- Kinzel Senior Advisors -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="Kinzel Senior Advisors"
+                            data-description="Financial advisory services website."
+                        >
+                            <img
+                                src="images/kinzel-senior-advisors.jpg"
+                                alt="Kinzel Senior Advisors Website Screenshot"
+                            />
+                            <div class="portfolio-content">
+                                <h3>Kinzel Senior Advisors</h3>
+                                <p>Financial advisory services website.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2022
+                                </div>
+                                <a href="https://www.kinzelsenioradvisors.com/" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Taylor University -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="dotCMS"
+                            data-title="Taylor University"
+                            data-description="University website built with dotCMS."
+                        >
+                            <img src="images/taylor-university.png" alt="Taylor University Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Taylor University</h3>
+                                <p>Lead generation website with Vue.js and dotCMS.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> dotCMS | <strong>Year:</strong> 2021
+                                </div>
+                                <a href="https://taylor.edu/" target="_blank" class="btn mt-2">View Project</a>
+                            </div>
+                        </div>
+
+                        <!-- Tipton County Foundation -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="Tipton County Foundation"
+                            data-description="Non-profit foundation website."
+                        >
+                            <img
+                                src="images/tipton-county-foundation.png"
+                                alt="Tipton County Foundation Website Screenshot"
+                            />
+                            <div class="portfolio-content">
+                                <h3>Tipton County Foundation</h3>
+                                <p>Non-profit foundation website for community programs.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2021
+                                </div>
+                                <a href="https://www.tiptoncf.org/" target="_blank" class="btn mt-2">View Project</a>
+                            </div>
+                        </div>
+
+                        <!-- Attica Public Library -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="Attica Public Library"
+                            data-description="Public library website with event listings."
+                        >
+                            <img src="images/attica-library.jpg" alt="Attica Public Library Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Attica Public Library</h3>
+                                <p>Public library website with community resources.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2021
+                                </div>
+                                <a href="https://www.attica.lib.in.us/" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- West Lebanon, Indiana -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Wix"
+                            data-title="West Lebanon, Indiana"
+                            data-description="Municipal website for the Town of West Lebanon."
+                        >
+                            <img src="images/west-lebanon.jpg" alt="West Lebanon Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>West Lebanon, Indiana</h3>
+                                <p>Municipal website for the Town of West Lebanon.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Wix | <strong>Year:</strong> 2021
+                                </div>
+                                <a href="https://www.westlebanonindiana.com/" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Library History Database -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="Custom"
+                            data-title="Library History Database"
+                            data-description="Custom React and Golang application for historical records."
+                        >
+                            <img src="images/history-database.png" alt="Library History Database Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Library History Database</h3>
+                                <p>Custom React and Golang database application.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> Custom | <strong>Year:</strong> 2021
+                                </div>
+                                <a href="http://www.wwtpl.lib.in.us/history-database" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Hamilton Eyecare Center -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="WordPress"
+                            data-title="Hamilton Eyecare Center"
+                            data-description="WordPress website for eyecare practice."
+                        >
+                            <img src="images/hamilton-eyecare.jpg" alt="Hamilton Eyecare Center Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Hamilton Eyecare Center</h3>
+                                <p>WordPress website for eyecare practice.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> WordPress | <strong>Year:</strong> 2019
+                                </div>
+                                <a href="https://hamiltoneyecarecenter.com/" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Positively Blackford -->
+                        <div
+                            class="portfolio-item"
+                            data-platform="WordPress"
+                            data-title="Positively Blackford"
+                            data-description="Community initiative WordPress website."
+                        >
+                            <img src="images/positively-blackford.jpg" alt="Positively Blackford Website Screenshot" />
+                            <div class="portfolio-content">
+                                <h3>Positively Blackford</h3>
+                                <p>Community initiative WordPress website.</p>
+                                <div class="portfolio-meta">
+                                    <strong>Platform:</strong> WordPress | <strong>Year:</strong> 2019
+                                </div>
+                                <a href="https://positivelyblackford.com/" target="_blank" class="btn mt-2"
+                                    >View Project</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cta">
+                <div class="container text-center">
+                    <h2 class="section-title">Ready to Start Your Project?</h2>
+                    <p class="mb-2">Let's discuss how we can help bring your vision to life.</p>
+                    <a href="contact.html" class="btn">Get In Touch</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 DK Cartwright LLC. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+            // Portfolio search and filter functionality
+            document.addEventListener("DOMContentLoaded", function () {
+                const searchInput = document.getElementById("project-search");
+                const filterButtons = document.querySelectorAll(".filter-btn");
+                const portfolioItems = document.querySelectorAll(".portfolio-item");
+                let selectedPlatforms = ["all"];
+
+                function filterProjects() {
+                    const searchTerm = searchInput.value.toLowerCase();
+
+                    portfolioItems.forEach((item) => {
+                        const title = item.dataset.title.toLowerCase();
+                        const description = item.dataset.description.toLowerCase();
+                        const platform = item.dataset.platform;
+
+                        const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+                        const matchesPlatform =
+                            selectedPlatforms.includes("all") || selectedPlatforms.includes(platform);
+
+                        if (matchesSearch && matchesPlatform) {
+                            item.style.display = "block";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+                }
+
+                function updateFilterButtons() {
+                    filterButtons.forEach((btn) => {
+                        const platform = btn.dataset.platform;
+                        if (selectedPlatforms.includes(platform)) {
+                            btn.classList.add("active");
+                        } else {
+                            btn.classList.remove("active");
+                        }
+                    });
+                }
+
+                // Add event listeners
+                searchInput.addEventListener("input", filterProjects);
+
+                filterButtons.forEach((btn) => {
+                    btn.addEventListener("click", function () {
+                        const platform = this.dataset.platform;
+
+                        if (platform === "all") {
+                            selectedPlatforms = ["all"];
+                        } else {
+                            // Remove 'all' if it's selected and we're selecting a specific platform
+                            if (selectedPlatforms.includes("all")) {
+                                selectedPlatforms = [platform];
+                            } else {
+                                // Toggle the platform
+                                const index = selectedPlatforms.indexOf(platform);
+                                if (index > -1) {
+                                    selectedPlatforms.splice(index, 1);
+                                } else {
+                                    selectedPlatforms.push(platform);
+                                }
+
+                                // If no platforms are selected, default to 'all'
+                                if (selectedPlatforms.length === 0) {
+                                    selectedPlatforms = ["all"];
+                                }
+                            }
+                        }
+
+                        updateFilterButtons();
+                        filterProjects();
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
