@@ -36,7 +36,19 @@
                     <h2 class="section-title">Get In Touch</h2>
 
                     <div class="contact-form">
-                        <form id="contactForm" action="#" method="POST">
+                        <form
+                            id="contactForm"
+                            name="contact"
+                            method="POST"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                        >
+                            <!-- Hidden field for spam protection -->
+                            <input type="hidden" name="form-name" value="contact" />
+                            <div style="display: none">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </div>
+
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" required />
@@ -171,16 +183,15 @@
         </footer>
 
         <script>
-            // Basic form validation and submission handling
+            // Enhanced form validation and submission handling for Netlify
             document.getElementById("contactForm").addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                // Get form data
+                // Get form data for validation
                 const formData = new FormData(this);
                 const data = Object.fromEntries(formData);
 
                 // Basic validation
                 if (!data.name || !data.email || !data.subject || !data.message) {
+                    e.preventDefault();
                     alert("Please fill in all required fields.");
                     return;
                 }
@@ -188,21 +199,20 @@
                 // Email validation
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(data.email)) {
+                    e.preventDefault();
                     alert("Please enter a valid email address.");
                     return;
                 }
 
-                // For now, just show a success message
-                // In a real implementation, you would send this data to a server
-                alert("Thank you for your message! We will get back to you within 24 hours.");
+                // If validation passes, show a processing message
+                // The form will submit naturally to Netlify
+                const submitBtn = this.querySelector(".btn");
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = "Sending...";
+                submitBtn.disabled = true;
 
-                // Reset form
-                this.reset();
-
-                // Note: To make this form functional, you would need to:
-                // 1. Set up a server-side script to handle form submissions
-                // 2. Configure email sending (using services like Formspree, Netlify Forms, or custom backend)
-                // 3. Add proper CSRF protection and server-side validation
+                // Note: Netlify will handle the form submission and redirect
+                // You can customize the success/error pages in your Netlify settings
             });
         </script>
     </body>

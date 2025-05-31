@@ -301,6 +301,14 @@ section:nth-child(odd):not(.hero) {
     gap: 2rem;
 }
 
+/* Process section specific grid - 3 columns */
+@media (min-width: 769px) {
+    #process .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
 .portfolio-item {
     background: #2a2a2a;
     border-radius: 15px;
@@ -694,7 +702,8 @@ footer {
 
     /* Technologies and services responsive - 1 column on mobile */
     #technologies .portfolio-grid,
-    #services .portfolio-grid {
+    #services .portfolio-grid,
+    #process .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
