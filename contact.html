@@ -50,9 +50,9 @@
 
             <section id="contact">
                 <div class="container">
-                    <h2 class="section-title">Get In Touch</h2>
+                    <h2 class="section-title animate-on-scroll fade-up">Get In Touch</h2>
 
-                    <div class="contact-form">
+                    <div class="contact-form animate-on-scroll fade-up delay-1">
                         <form
                             id="contactForm"
                             name="contact"
@@ -149,7 +149,7 @@
                         </form>
                     </div>
 
-                    <div class="text-center mt-2">
+                    <div class="text-center mt-2 animate-on-scroll fade-up delay-2">
                         <h3>Other Ways to Reach Us</h3>
                         <p>Prefer to contact us directly? We're here to help!</p>
                         <p><strong>Email:</strong> info@dkcartwright.com</p>
@@ -160,9 +160,9 @@
 
             <section id="process">
                 <div class="container">
-                    <h2 class="section-title">Our Process</h2>
+                    <h2 class="section-title animate-on-scroll fade-up">Our Process</h2>
                     <div class="portfolio-grid">
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-1">
                             <div class="portfolio-content">
                                 <h3>1. Discovery</h3>
                                 <p>
@@ -171,7 +171,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-2">
                             <div class="portfolio-content">
                                 <h3>2. Design & Development</h3>
                                 <p>
@@ -180,7 +180,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-3">
                             <div class="portfolio-content">
                                 <h3>3. Launch & Support</h3>
                                 <p>
@@ -232,6 +232,29 @@
                 if (e.key === "Escape") {
                     closeMenu();
                 }
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animation classes
+            document.addEventListener("DOMContentLoaded", () => {
+                const animatedElements = document.querySelectorAll(".animate-on-scroll");
+                animatedElements.forEach((el) => {
+                    observer.observe(el);
+                });
             });
 
             // Enhanced form validation and submission handling for Netlify

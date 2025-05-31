@@ -48,10 +48,10 @@
 
             <section id="all-projects">
                 <div class="container">
-                    <h2 class="section-title">All Projects</h2>
+                    <h2 class="section-title animate-on-scroll fade-up">All Projects</h2>
 
                     <!-- Search and Filter Controls -->
-                    <div class="portfolio-controls">
+                    <div class="portfolio-controls animate-on-scroll fade-up delay-1">
                         <div class="search-container">
                             <input
                                 type="text"
@@ -73,7 +73,7 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-grid" id="portfolio-grid">
+                    <div class="portfolio-grid animate-on-scroll fade-up delay-2" id="portfolio-grid">
                         <!-- What'sUp 24/7 -->
                         <div
                             class="portfolio-item"
@@ -353,9 +353,11 @@
 
             <section id="cta">
                 <div class="container text-center">
-                    <h2 class="section-title">Ready to Start Your Project?</h2>
-                    <p class="mb-2">Let's discuss how we can help bring your vision to life.</p>
-                    <a href="contact.html" class="btn">Get In Touch</a>
+                    <h2 class="section-title animate-on-scroll fade-up">Ready to Start Your Project?</h2>
+                    <p class="mb-2 animate-on-scroll fade-up delay-1">
+                        Let's discuss how we can help bring your vision to life.
+                    </p>
+                    <a href="contact.html" class="btn animate-on-scroll scale-in delay-2">Get In Touch</a>
                 </div>
             </section>
         </main>
@@ -398,6 +400,29 @@
                 if (e.key === "Escape") {
                     closeMenu();
                 }
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animation classes
+            document.addEventListener("DOMContentLoaded", () => {
+                const animatedElements = document.querySelectorAll(".animate-on-scroll");
+                animatedElements.forEach((el) => {
+                    observer.observe(el);
+                });
             });
 
             // Portfolio search and filter functionality

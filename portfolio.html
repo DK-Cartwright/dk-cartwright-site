@@ -50,8 +50,8 @@
 
             <section id="portfolio">
                 <div class="container">
-                    <h2 class="section-title">Recent Projects</h2>
-                    <div class="text-center mb-2">
+                    <h2 class="section-title animate-on-scroll fade-up">Recent Projects</h2>
+                    <div class="text-center mb-2 animate-on-scroll fade-up delay-1">
                         <p>
                             Explore our featured projects below, or
                             <a href="portfolio_extended.html" class="text-link">view our complete portfolio</a> for more
@@ -60,7 +60,7 @@
                     </div>
                     <div class="portfolio-grid">
                         <!-- What'sUp 24/7 - Laravel Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-1">
                             <img src="images/whatsup247.png" alt="What'sUp 24/7 Website Screenshot" />
                             <div class="portfolio-content">
                                 <h3>What'sUp 24/7</h3>
@@ -80,7 +80,7 @@
                         </div>
 
                         <!-- Payroc - dotCMS Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-2">
                             <img src="images/payroc.png" alt="Payroc Website Screenshot" />
                             <div class="portfolio-content">
                                 <h3>Payroc</h3>
@@ -99,7 +99,7 @@
                         </div>
 
                         <!-- Hamilton, IN - Wix Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-3">
                             <img src="images/hamilton-in.jpg" alt="Hamilton, Indiana Website Screenshot" />
                             <div class="portfolio-content">
                                 <h3>Hamilton, Indiana</h3>
@@ -119,7 +119,7 @@
                         </div>
 
                         <!-- Mrs. Kate Carpenter - Wix Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-1">
                             <img src="images/mrs-kate.png" alt="Mrs. Kate Carpenter Website Screenshot" />
                             <div class="portfolio-content">
                                 <h3>Mrs. Kate Carpenter</h3>
@@ -137,7 +137,7 @@
                         </div>
 
                         <!-- Taylor University - dotCMS Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-2">
                             <img src="images/taylor-university.png" alt="Taylor University Website Screenshot" />
                             <div class="portfolio-content">
                                 <h3>Taylor University</h3>
@@ -156,7 +156,7 @@
                         </div>
 
                         <!-- Library History Database - Custom Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-3">
                             <img src="images/history-database.png" alt="Library History Database Screenshot" />
                             <div class="portfolio-content">
                                 <h3>Library History Database</h3>
@@ -177,7 +177,7 @@
                         </div>
 
                         <!-- Hamilton Eyecare Center - WordPress Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-1">
                             <img src="images/hamilton-eyecare.jpg" alt="Hamilton Eyecare Center Website Screenshot" />
                             <div class="portfolio-content">
                                 <h3>Hamilton Eyecare Center</h3>
@@ -198,7 +198,7 @@
                         </div>
 
                         <!-- Positively Blackford - WordPress Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-2">
                             <img src="images/positively-blackford.jpg" alt="Positively Blackford Website Screenshot" />
                             <div class="portfolio-content">
                                 <h3>Positively Blackford</h3>
@@ -219,7 +219,7 @@
                         </div>
 
                         <!-- Tipton County Foundation - Wix Project -->
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-3">
                             <img
                                 src="images/tipton-county-foundation.png"
                                 alt="Tipton County Foundation Website Screenshot"
@@ -244,21 +244,21 @@
 
             <section id="technologies">
                 <div class="container">
-                    <h2 class="section-title">Technologies We Use</h2>
+                    <h2 class="section-title animate-on-scroll fade-up">Technologies We Use</h2>
                     <div class="portfolio-grid">
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-1">
                             <div class="portfolio-content">
                                 <h3>Frontend Technologies</h3>
                                 <p>HTML5, CSS3, JavaScript, TypeScript, Vue.js, React, Sass</p>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-2">
                             <div class="portfolio-content">
                                 <h3>Backend Technologies</h3>
                                 <p>PHP, Golang, Laravel, Node.js, MySQL, SQLite</p>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item animate-on-scroll delay-3">
                             <div class="portfolio-content">
                                 <h3>Platforms & CMS</h3>
                                 <p>WordPress, Wix, dotCMS, Custom Applications</p>
@@ -270,9 +270,11 @@
 
             <section id="cta">
                 <div class="container text-center">
-                    <h2 class="section-title">Ready to Start Your Project?</h2>
-                    <p class="mb-2">Let's discuss how we can help bring your vision to life.</p>
-                    <a href="contact.html" class="btn">Get In Touch</a>
+                    <h2 class="section-title animate-on-scroll fade-up">Ready to Start Your Project?</h2>
+                    <p class="mb-2 animate-on-scroll fade-up delay-1">
+                        Let's discuss how we can help bring your vision to life.
+                    </p>
+                    <a href="contact.html" class="btn animate-on-scroll scale-in delay-2">Get In Touch</a>
                 </div>
             </section>
         </main>
@@ -315,6 +317,29 @@
                 if (e.key === "Escape") {
                     closeMenu();
                 }
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animation classes
+            document.addEventListener("DOMContentLoaded", () => {
+                const animatedElements = document.querySelectorAll(".animate-on-scroll");
+                animatedElements.forEach((el) => {
+                    observer.observe(el);
+                });
             });
         </script>
     </body>
