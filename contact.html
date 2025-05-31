@@ -18,10 +18,24 @@
                 <div class="logo">
                     <img src="images/dk-cartwright-logo.png" alt="DK Cartwright LLC" />
                 </div>
-                <ul class="nav-links">
+
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <ul class="nav-links" id="navLinks">
+                    <li class="close-btn-container">
+                        <button class="close-btn" id="closeBtn" aria-label="Close navigation menu">
+                            <span>&times;</span>
+                        </button>
+                    </li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -187,6 +201,39 @@
         </footer>
 
         <script>
+            // Hamburger Menu Toggle Functionality
+            const hamburgerMenu = document.getElementById("hamburgerMenu");
+            const navLinks = document.getElementById("navLinks");
+            const closeBtn = document.getElementById("closeBtn");
+            const body = document.body;
+
+            function openMenu() {
+                navLinks.classList.add("active");
+                body.classList.add("menu-open");
+            }
+
+            function closeMenu() {
+                navLinks.classList.remove("active");
+                body.classList.remove("menu-open");
+            }
+
+            hamburgerMenu.addEventListener("click", openMenu);
+            closeBtn.addEventListener("click", closeMenu);
+
+            // Close menu when clicking outside
+            document.addEventListener("click", function (e) {
+                if (!navLinks.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Close menu when pressing escape key
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
             // Enhanced form validation and submission handling for Netlify
             document.getElementById("contactForm").addEventListener("submit", function (e) {
                 // Get form data for validation
